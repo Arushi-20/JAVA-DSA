@@ -1,6 +1,6 @@
 public class min {
     public static void main(String[] args) {
-        int[] arr={1,2,4,0,44};
+        int[] arr={1,2,4,0,44,55,10,20};
         System.out.println(min(arr));
     }
     static int min(int[]arr){
