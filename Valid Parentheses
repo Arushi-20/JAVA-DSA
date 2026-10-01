@@ -1,0 +1,22 @@
+class Solution {
+
+    boolean isMatched(char opening, char closing){
+            return (opening=='(' && closing==')' || opening=='{' && closing=='}'  || opening=='[' && closing==']');
+    }
+    public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();    
+        for(char c:s.toCharArray()){
+            if(c=='(' || c=='{' || c=='['){
+                stack.push(c); //store the openning into the stack
+            }
+            else if(!stack.isEmpty() && isMatched(stack.peek(),c)){
+                //the character is closing
+                stack.pop();
+
+            }else{
+                return false;
+            }
+        }
+        return stack.isEmpty();
+    }
+}
